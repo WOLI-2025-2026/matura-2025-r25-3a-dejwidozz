@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -47,7 +48,12 @@ void zadanie2_1()
 
 int main() 
 {
+    ifstream plik("../zalaczniki-2025/symbole.txt");
+    if(!plik.is_open())
+    {
+        cerr << "nie mozna otworzyc pliku" << endl;
+        return 1;
+    }
 
-    zadanie2_1();
-    return 0;
-}
+    vector<string> linie;
+    string linia; 
